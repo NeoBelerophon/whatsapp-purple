@@ -366,7 +366,7 @@ static PurpleChat * create_chat_group(const char * gpid, whatsapp_connection *wc
 	g_hash_table_insert(htable, g_strdup("owner"), own);
 	g_hash_table_insert(htable, g_strdup("admins"), admins);
 
-	PurpleChat * ch = purple_chat_new(acc, sub, htable);
+	PurpleChat * ch = purple_chat_new(acc, g_strdup(gpid), htable);
 	purple_blist_add_chat(ch, NULL, NULL);
 
 	return ch;
