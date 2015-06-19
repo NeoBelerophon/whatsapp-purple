@@ -300,7 +300,7 @@ static void waprpl_blist_node_added(PurpleBlistNode * node)
 		return;		/* Already created */
 	purple_debug_info(WHATSAPP_ID, "Creating group %s\n", groupname);
 
-	waAPI_creategroup(wconn->waAPI, groupname);
+	waAPI_creategroup(wconn->waAPI, gid);
 	waprpl_check_output(purple_account_get_connection(purple_chat_get_account(ch)));
 
 	/* Remove it, it will get added at the moment the chat list gets refreshed */
